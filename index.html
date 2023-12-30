@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Home</h1>
+    WS TEST
+  </body>
+  <script>
+    let ws;
+    const proto = window.location.protocol === "https:" ? "wss" : "ws";
+    ws = new WebSocket(`${proto}://${window.location.host}`);
+
+    ws.onmessage = (evt) => {
+      console.log(evt.data);
+    };
+  </script>
+</html>
